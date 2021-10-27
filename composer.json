@@ -1,6 +1,6 @@
 {
     "name": "azamatx/eskizsms-laravel",
-    "description": "Simple library for integrating your Laravel app with Eskiz SMS API (eskiz.uz)",
+    "description": "Simple library for integrating Eskiz SMS API (eskiz.uz) into your Laravel app",
     "keywords": [
         "azamatx",
         "eskizsms-laravel"
