@@ -4,5 +4,27 @@ namespace Azamatx\EskizsmsLaravel;
 
 class EskizsmsLaravel
 {
-    // Build your next great package.
+	private $token;
+	private $email;
+	private $password;
+
+    public function __construct()
+	{
+		dd('test');
+	}
+
+	public function getToken()
+	{
+
+	}
+
+	public function updateToken()
+	{
+
+	}
+
+	public function deleteToken()
+	{
+		
+	}
 }
