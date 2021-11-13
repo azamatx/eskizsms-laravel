@@ -106,7 +106,7 @@ class EskizsmsLaravel
 		session()->flush();
 	}
 
-	public function getPinFromSession()
+	public static function getPinFromSession()
 	{
 		return session('eskiz_sms_pin');
 	}
@@ -161,7 +161,7 @@ class EskizsmsLaravel
 	public static function validatePin($user_input_pin)
 	{
 		// check user entered pin
-		$stored_pin = $this->getPinFromSession();
+		$stored_pin = self::getPinFromSession();
 		if(!empty($stored_pin) && intval($stored_pin) === intval($user_input_pin)) {
 			return true;
 		}
