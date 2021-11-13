@@ -4,6 +4,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/azamatx/eskizsms-laravel.svg?style=flat-square)](https://packagist.org/packages/azamatx/eskizsms-laravel)
 
 Simple Eskiz SMS (https://eskiz.uz/sms) API client for Laravel. Used to manage SMS verification. Sends generated random pin code to given mobile phone number and verifies the pin code. You have to subscribe to Eskiz before using this package.
+
 Eskiz SMS API developer documentation can be found here: https://documenter.getpostman.com/view/663428/RzfmES4z?version=latest
 
 ## Installation
@@ -36,13 +37,19 @@ class MyController extends Controller
 Send pin code:
 
 ```php
+// you may enter number with or without "+" (plus) sign
 $status = EskizsmsLaravel::sendPin('998901234567');
+
+if(true === $status) {
+	// SMS has been sent!
+}
 ```
 
 Validate pin code from SMS:
 
 ```php
 $pin_correct = EskizsmsLaravel::validatePin($user_provided_pin);
+
 if(true === $pin_correct) {
 	// user entered correct pin code!
 }
