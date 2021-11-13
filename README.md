@@ -2,9 +2,8 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/azamatx/eskizsms-laravel.svg?style=flat-square)](https://packagist.org/packages/azamatx/eskizsms-laravel)
 [![Total Downloads](https://img.shields.io/packagist/dt/azamatx/eskizsms-laravel.svg?style=flat-square)](https://packagist.org/packages/azamatx/eskizsms-laravel)
-![GitHub Actions](https://github.com/azamatx/eskizsms-laravel/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+Simple Eskiz SMS (https://eskiz.uz/sms) API client for Laravel. Used to manage SMS verification. Sends generated random pin code to given mobile phone number and verifies the pin code.
 
 ## Installation
 
@@ -16,14 +15,36 @@ composer require azamatx/eskizsms-laravel
 
 ## Usage
 
-```php
-// Usage description here
-```
-
-### Testing
+Publish configuration file:
 
 ```bash
-composer test
+php artisan vendor:publish
+```
+
+Include the package class in your controller:
+
+```php
+use EskizsmsLaravel;
+
+class MyController extends Controller
+{
+	// controller methods here...
+}
+```
+
+Send pin code:
+
+```php
+$status = EskizsmsLaravel::sendPin('998901234567');
+```
+
+Validate pin code from SMS:
+
+```php
+$pin_correct = EskizsmsLaravel::validatePin($user_provided_pin);
+if(true === $pin_correct) {
+	// user entered correct pin code!
+}
 ```
 
 ### Changelog

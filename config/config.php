@@ -6,4 +6,5 @@
 return [
 	'email' => env('ESKIZSMS_EMAIL'),
 	'password' => env('ESKIZSMS_PASSWORD'),
+	'from' => env('ESKIZSMS_FROM', '4546'),
 ];
