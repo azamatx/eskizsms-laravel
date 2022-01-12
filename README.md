@@ -23,6 +23,15 @@ Publish configuration file:
 php artisan vendor:publish
 ```
 
+Register the provider in `config/app.php`:
+```php
+'providers' => [
+	// ...
+	Azamatx\EskizsmsLaravel\EskizsmsLaravel::class,
+	// ...
+]
+```
+
 Include the package class in your controller:
 
 ```php
